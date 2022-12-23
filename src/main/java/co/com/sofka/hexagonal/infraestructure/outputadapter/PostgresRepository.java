@@ -38,7 +38,7 @@ public class PostgresRepository implements EntityRepository {
         Object[] fieldValues = new Object[ entityFields.length];
 
         try{
-            for ( int i =0; i < entityFields.length; i++){
+            for ( int i=0; i < entityFields.length; i++){
                 fields[i] = entityFields[i].getName();
                 fieldValues[i] = reg.getClass()
                         .getMethod(
@@ -118,9 +118,8 @@ public class PostgresRepository implements EntityRepository {
                         Object fieldValue= rs.getObject(pos);
                         m[i].invoke(row, fieldValue);
                     }
-
                 }
-                return (T) row.getClass().getMethod("buiild").invoke(row);
+                return (T) row.getClass().getMethod("build").invoke(row);
 
             }catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
             | NoSuchMethodException | SecurityException ex){

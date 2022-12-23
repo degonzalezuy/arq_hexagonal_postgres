@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS Orders
 (
     id TEXT NOT NULL PRIMARY KEY,
     customerId TEXT NOT NULL,
-    total NUMERIC(10.2) NOT NULL
+    total NUMERIC(10,2) NOT NULL
 );
